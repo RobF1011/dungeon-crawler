@@ -1,0 +1,269 @@
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Amatic SC Regular'), local('AmaticSC-Regular'), url(http://themes.googleusercontent.com/static/fonts/amaticsc/v3/DPPfSFKxRTXvae2bKDzp5D8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Amatic SC';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Amatic SC Bold'), local('AmaticSC-Bold'), url(http://themes.googleusercontent.com/static/fonts/amaticsc/v3/IDnkRTPGcrSVo50UyYNK73hCUOGz7vYGh680lGh-uXM.woff) format('woff');
+}
+
+/* Reset ======================================================= */    
+    
+     * { margin:0; padding:0; box-sizing:border-box; }
+    header, footer, section, figure, figcaption { display:block; }
+        
+
+    
+    section { width:290px; margin:0 auto; }
+    
+    a { cursor:pointer; text-decoration:none; }
+    
+    .paused * { animation-play-state:paused; opacity:.5; pointer-events:none; transition:opacity .4s; }
+    
+    
+    
+/* Creature container ========================================== */    
+    .creatures { list-style:none; margin:15px 0; transition:opacity .3s; text-align:center; }
+    
+    .creatures li {
+        width:260px;
+        list-style:none;
+        margin:0 auto;
+        user-select:none;
+    }
+    .error { padding:45px; font-size:2.5rem; font-weight:bold; }
+
+
+
+/* Header ====================================================== */
+    hgroup { text-align:center; white-space:nowrap; }  
+    .logo, .make { position:relative; display:block; color:#494636; }
+    .logo { font-size:4rem; }
+    
+    .make { font-size:2rem; }
+    
+    header {
+        display:none;
+        color:#F8EEB9;
+        font-weight:700;
+        width:100%;
+        line-height:2;
+        background:#3B382B center bottom no-repeat;
+        background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.3) 100%);
+        background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.05) 40%, rgba(0,0,0,.3) 100%);
+        background-size:100% 45px;
+        user-select:none;
+    }
+    
+    header ul { list-style:none;}
+    header li {
+        text-align:left;
+        font:400 1em "Helvetica", sans-serif;
+        background:rgba(0,0,0,.4);
+        padding:10px 15px;
+        margin-top:.4em;
+        border-radius:5px;
+        color:#DAD1A4;
+        user-select:text;
+    }
+    
+    i { font-style:normal; border-bottom:2px solid transparent; transition:.2s; }
+        .active { animation:pulse 1s infinite; }
+        @keyframes pulse { 50%{ color:#fff; border-bottom-color:#DAD1A4; } }
+    
+    
+    header section { width:100%; text-align:center; padding:30px; }
+    
+    header a { color:#F8EEB9; border-bottom:2px solid #67624C; transition:border-color .2s; }
+    header a:hover { border-bottom-color:#F8EEB9; }
+    
+    header h2 { font-size:1em; padding:15px 30px 0; opacity:.8; }
+
+
+
+/* Footer ====================================================== */
+    footer { display:none; text-align:center; padding:60px 30px; font-size:2.3rem; }
+    footer a { color:#111; border-bottom:1px dashed #111; }
+    footer a:hover { border-bottom-style:solid; }
+
+
+
+/* Creature ==================================================== */
+    figure {
+        width:200px;
+        height:200px;
+        padding:40px;
+        box-shadow:inset -10px -30px rgba(0,0,0,.06);
+        -moz-border-radius:100px;
+        -webkit-border-radius:100px;
+        border-radius:50%;
+        animation:bobble 5s ease-in-out infinite;
+        transform-origin:center bottom;
+        transition:padding .3s, bottom .3s;
+        text-align:center;
+    }
+    @keyframes bobble { 33%{ transform:rotate(5deg); } 66%{ transform:rotate(-5deg); } }
+    
+    
+    li:hover figure { padding:30px 40px; }
+    li:hover .click-anim { transform:translateY(-6px); }
+    
+    
+   .click-anim { transition:.3s cubic-bezier(.15,.60,.30,1.9); transform-origin:center bottom; }
+        li:active .click-anim { transform:scale(1.1);  } 
+
+
+
+/* Captions ==================================================== */    
+    figcaption { padding:10px 0; font-size:12px; font-family:monospace; }
+
+    em { font-family:"Georgia", serif; }    
+    figcaption a { display:inline-block; color:#494636; border-bottom:1px solid transparent; white-space:nowrap; }
+    figcaption a:hover { text-decoration:underline; }
+        
+    time { display:block; }
+    time a { font-size:11px; }  
+    
+    
+    
+/* Shadow ======================================================= */
+    .shadow {
+        height:20px;
+        background:rgba(0,0,0,.4);
+        width:60%;
+        border-radius:100%;
+        margin:-21px 0 0 30%;
+        transition:.3s;
+    }
+    li:hover .shadow { background:rgba(0,0,0,.2); } 
+    li:active .shadow { background:rgba(0,0,0,.2); width:70%; }
+    
+    
+    
+/* Eyes ======================================================== */
+    .eye {
+        display:inline-block;
+        width:10px;
+        height:15px;
+        margin:0 5px 5px;
+        background:rgba(0,0,0,.9);
+        border-radius:10px;
+        border-radius:50%;
+        animation:blink 4s ease-in-out infinite;
+    }
+    @keyframes blink { 90% { transform:none; } 95% { transform:rotateX(90deg); } }
+    
+    
+    
+/* Moustache =================================================== */    
+    .moustache { display:inline-block; width:100%; height:10px; }
+    .moustache:before, .moustache:after { display:inline-block;  color:rgba(0,0,0,.9); content:"~"; font-size:4em; line-height:0; font:5em/20px "Helvetica", Arial; margin:0 -4px; }
+    .moustache:before { transform:rotateY(180deg); }
+    
+    li:hover .moustache { animation:moustache-wiggle 2s infinite; }
+    @keyframes moustache-wiggle { 50%,90%{ transform:none; } 60%,80%{ transform:rotate(-5deg); } 70%{ transform:rotate(5deg); } }
+    
+    
+    
+/* Mouth =================================================== */    
+    .mouth {
+        display:block;
+        width:100%;
+        height:20px;
+        margin:5px auto 0;
+        background:rgba(0,0,0,.9);
+        border-radius:10px 10px 100px 100px;
+        border-radius:10px 10px 50% 50%;
+        transition:border-radius .5s, height .5s cubic-bezier(.15,.60,.30,1.9);
+        overflow:hidden;
+        line-height:0;
+        transform-origin:center top; 
+    }
+
+    
+    .teeth:after,
+    .teeth:before,
+    .tooth:after {
+        display:inline-block;
+        content:"";
+        margin:0 2px;
+        width:15px;
+        height:15px;
+        background:#eee;
+    }
+    li:nth-child(odd) .tooth:after { margin-right:17px; }
+    li:nth-child(even) .tooth:after { margin-left:17px; }
+
+
+
+/* Behaviors =================================================== */  
+    .hungry .mouth { animation:hungry .5s infinite; border-radius:30px 30px 50% 50%; height:80px; }
+    .hungry .mouth:hover { cursor:none; }
+        @keyframes hungry { 40%{ height:40px; } }
+    
+    .nervous .mouth { animation:nervous .2s infinite; border-radius:40% 40% 5px 5px; }
+        @keyframes nervous { 50%{ height:24px; } }
+    
+    .hyper { animation:hyper 2s infinite; }
+        @keyframes hyper {
+            25%{ transform:translateY(-10px); }
+            15%,50%{ transform:rotateX(20deg); }
+            75%{ transform:none; }
+        }
+        .hyper .mouth { height:80px; border-radius:20px 20px 50% 50%; }
+
+
+    
+    
+/* Mobile-first Responsive======================================= */    
+    @media screen and (min-width:560px){
+        header section, section { width:550px; }
+        header section { font-size:1.2em; text-align:left; padding:30px 15px; }
+    }
+
+    @media screen and (min-width:820px){
+        header section, section { width:840px; }
+        
+        header h1 { font-size:1.7em; padding:0 30px; }
+        header ul { padding:0 30px; }
+        
+        hgroup { text-align:left; line-height:7rem; overflow:hidden;  } 
+        
+
+        .creatures { animation:enter .7s .2s both; transform-origin:center top; }
+            @keyframes enter { 0%{ transform:translateY(50px) scale(.8); opacity:0; } 100%{ transform:none; } }   
+        .logo, .make, .tweet { display:inline-block; }
+        .make { padding:0 30px; margin-right:45px; } 
+        .logo { padding:0 15px 0 45px; }
+            .logo span, .make span { border-bottom:2px solid transparent; }
+            .logo:hover span { border-color:#494636; }
+            
+        .make { user-select:none; float:right; border-radius:0 0 30px 30px; background:#3B382B; color:#F8EEB9; font-weight:700;
+                 box-shadow:-15px -30px #3B382B, 15px -30px #3B382B; transition:.3s; }
+            .make:hover span { border-color:#F8EEB9; }
+            .make:hover, .opened { background:#29271E; box-shadow:-15px -30px #29271E, 15px -30px #29271E; }
+            
+        .make:before, .make:after { position:absolute; top:0; display:block; content:""; }    
+        .make:before, .make:after { width:30px; height:100%; background:#F8EEB9 }
+        .make:before { left:-30px; border-radius:0 15px 0 0; }
+        .make:after { right:-30px; border-radius:15px 0 0; }
+        
+        time { display:block; transition:.2s; transition-delay:.2s; opacity:0; }
+        li:hover time, li:nth-child(-n+2) time { opacity:1; }
+    }
+
+
+
+
+
+    
+/* Pretty Scrollbars =========================================== */  
+    body:-webkit-scrollbar, body:scrollbar { background:#F8EEB9; }
+    body:-webkit-scrollbar-thumb, body:scrollbar-thumb { background:rgba(0,0,0,.1); border:solid #F8EEB9; border-width:10px 5px 10px 0; }
+    
+    
+    
