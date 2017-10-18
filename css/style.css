@@ -19,7 +19,7 @@ body {
 }
 
 .container {
-	background: url(http://static1.squarespace.com/static/5563eac8e4b0c0ea1b0601ca/5564007ce4b006bb6879efd4/556419e2e4b07a2428f8892d/1432623603926/Dungeon_Corridor_01.jpg);
+	background: url('../images/dungeon-corridor.jpg');
 	background-size: cover;
 	background-position: top center;
 	background-repeat: no-repeat;
