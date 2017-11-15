@@ -1,5 +1,5 @@
-var playerHealth = 20;
-var blobHealth = 20;
+let playerHealth = 20;
+let blobHealth = 20;
 
 $('#p-health').text(playerHealth);
 $('#attack-btn').on("click", fightBlob);
@@ -11,7 +11,7 @@ function fightBlob () {
 	else if (blobHealth > 0) {
 		$('#attack-btn').off();
 		$('#attack-btn').text('Wait...');
-		var youHit = Math.floor(Math.random() * 10);
+		let youHit = Math.floor(Math.random() * 10);
 		blobHealth = blobHealth - youHit;
 		$('#action').text('You attack the green blob for ' + youHit + ' damage! ' + blobHealth + ' health left!');	
 		$('#slice').css('height', '40%');
@@ -36,7 +36,7 @@ function fightBlob () {
 			},2000);
 		}
 		else {
-			var blobHit = Math.floor(Math.random() * 10);
+			let blobHit = Math.floor(Math.random() * 10);
 			playerHealth = playerHealth - blobHit;
 			setTimeout(function() {
 			$('#action').text('The green blob attacks! ' + blobHit + ' damage!');
